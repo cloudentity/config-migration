@@ -1,0 +1,1519 @@
+{
+  "initialize": false,
+  "do_not_create_default_claims": false,
+  "name": "CDR Australia Demo",
+  "profile": "cdr_australia",
+  "type": "regular",
+  "color": "#fabc3e",
+  "logo_uri": "",
+  "secret": "",
+  "rotated_secrets": null,
+  "jwks": {
+    "keys": null,
+    "next_signing_key": null,
+    "next_encryption_key": null,
+    "revoked_signing_keys": null,
+    "revoked_encryption_keys": null,
+    "rotated_keys_limit": 0,
+    "revoked_keys_limit": 0
+  },
+  "root_cas": "",
+  "subject_identifier_algorithm_salt": "",
+  "access_token_strategy": "opaque",
+  "key_type": "ps",
+  "custom_issuer_url": "",
+  "dynamic_client_registration": {
+    "enabled": true,
+    "initial_access_token": {
+      "required": false
+    },
+    "payload": {
+      "format": "jws",
+      "jws_payload": {
+        "source": "client_software_statement",
+        "jwks": {
+          "keys": null
+        },
+        "jwks_uri": ""
+      }
+    },
+    "default_scopes": null,
+    "disable_registration_token_rotation": false,
+    "cert_bound_registration_token": false,
+    "disable_registration_token_management": true,
+    "registration_access_token_ttl": "720h0m0s",
+    "disable_registration_access_token_expiry": false
+  },
+  "grant_types": [
+    "authorization_code",
+    "refresh_token",
+    "client_credentials"
+  ],
+  "token_endpoint_auth_methods": [
+    "private_key_jwt"
+  ],
+  "token_endpoint_authn_methods": [
+    "private_key_jwt"
+  ],
+  "access_token_ttl": "10m0s",
+  "refresh_token_ttl": "4h0m0s",
+  "authorization_code_ttl": "5m0s",
+  "id_token_ttl": "10m0s",
+  "cookie_max_age": "10m0s",
+  "enforce_pkce": true,
+  "enforce_pkce_for_public_clients": false,
+  "subject_identifier_types": [
+    "pairwise"
+  ],
+  "subject_format": "hash",
+  "enable_trust_anchor": true,
+  "trust_anchor_configuration": {
+    "jwks": {
+      "keys": null
+    },
+    "jwks_uri": ""
+  },
+  "enable_quick_access": false,
+  "enable_idp_discovery": false,
+  "idp_discovery": {
+    "enabled": false,
+    "discovery_mode": "domain_matching"
+  },
+  "enable_legacy_clients_with_no_software_statement": false,
+  "dynamic_scope_separator": ".",
+  "issuer_id": "",
+  "backchannel_token_delivery_modes_supported": [
+    "poll",
+    "ping"
+  ],
+  "backchannel_user_code_parameter_supported": false,
+  "consent_id_namespace": "",
+  "require_pushed_authorization_requests": true,
+  "pushed_authorization_request_ttl": "1m0s",
+  "device_authorization": {
+    "request_ttl": "30m0s",
+    "user_code_length": 8,
+    "user_code_character_set": "base20"
+  },
+  "enforce_id_token_encryption": false,
+  "legal_entity": {
+    "party": {
+      "name": "",
+      "home_uri": "",
+      "logo_uri": "",
+      "registry_name": "",
+      "registered_entity_name": "",
+      "registered_entity_identifier": ""
+    }
+  },
+  "authentication_context_settings": {
+    "attributes": [
+      {
+        "name": "sub",
+        "description": "Subject",
+        "type": "string",
+        "labels": [
+          "advanced"
+        ]
+      },
+      {
+        "name": "scp",
+        "description": "List of scopes",
+        "type": "string_array",
+        "labels": [
+          "advanced"
+        ]
+      },
+      {
+        "name": "groups",
+        "description": "List of groups that user belongs to",
+        "type": "string_array",
+        "labels": []
+      },
+      {
+        "name": "email",
+        "description": "Email",
+        "type": "string",
+        "labels": [
+          "simple"
+        ]
+      },
+      {
+        "name": "email_verified",
+        "description": "Email verified",
+        "type": "bool",
+        "labels": [
+          "advanced"
+        ]
+      },
+      {
+        "name": "phone_number",
+        "description": "Phone",
+        "type": "string",
+        "labels": [
+          "simple"
+        ]
+      },
+      {
+        "name": "phone_number_verified",
+        "description": "Phone verified",
+        "type": "bool",
+        "labels": [
+          "advanced"
+        ]
+      },
+      {
+        "name": "address.formatted",
+        "description": "Full mailing address",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "address.street_address",
+        "description": "Full street address",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "address.locality",
+        "description": "City or locality",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "address.region",
+        "description": "Stage, province, prefecture or region",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "address.country",
+        "description": "Country",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "address.postal_code",
+        "description": "Postal code",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "name",
+        "description": "Name",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "given_name",
+        "description": "Given name",
+        "type": "string",
+        "labels": [
+          "simple"
+        ]
+      },
+      {
+        "name": "middle_name",
+        "description": "Middle name",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "family_name",
+        "description": "Family name",
+        "type": "string",
+        "labels": [
+          "simple"
+        ]
+      },
+      {
+        "name": "nickname",
+        "description": "Nickname",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "preferred_username",
+        "description": "The primary username that represents the user",
+        "type": "string",
+        "labels": [
+          "simple"
+        ]
+      },
+      {
+        "name": "profile",
+        "description": "URL of the profile page",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "picture",
+        "description": "URL of the profile picture",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "website",
+        "description": "URL of the web page",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "gender",
+        "description": "Gender",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "birthdate",
+        "description": "Birthdate",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "zoneinfo",
+        "description": "Zoneinfo",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "locale",
+        "description": "Locale",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "updated_at",
+        "description": "Last update",
+        "type": "number",
+        "labels": []
+      },
+      {
+        "name": "idp_sub",
+        "description": "IDP Subject",
+        "type": "string",
+        "labels": []
+      },
+      {
+        "name": "customer_id",
+        "description": "Customer ID",
+        "type": "string",
+        "labels": []
+      }
+    ]
+  },
+  "cdr": {
+    "brand_id": "",
+    "adr_validation_enabled": false,
+    "skip_register_url_validation": false,
+    "register_url": "",
+    "register_api_version": "1.20.0",
+    "industry": "all",
+    "dont_cache_trust_anchor_data": false
+  },
+  "obbr": {
+    "industry": ""
+  },
+  "advanced": {
+    "block_response_modes": true,
+    "disallowed_response_modes": [
+      "query"
+    ],
+    "disallow_code_response_type_without_jarm": true,
+    "disable_refresh_token_cycling": true,
+    "ignore_unknown_scopes_for_dcr": true,
+    "enforce_acr_values": true,
+    "acr_values": [
+      "urn:cds.au:cdr:2",
+      "urn:cds.au:cdr:3"
+    ],
+    "disable_dcr_client_certificate_bound_access_tokens": null,
+    "advertise_only_mtls_aliases_in_well_known": null,
+    "return_iss_parameter_in_authorization_response": false,
+    "require_request_or_request_uri_parameter": true,
+    "disallow_access_token_in_query_for_protected_resources": true,
+    "disable_par": null
+  },
+  "saml": {
+    "subject_name_id": ""
+  },
+  "version": 2,
+  "token_endpoint_auth_signing_alg_values": [
+    "PS256",
+    "ES256"
+  ],
+  "fdx": {
+    "legal_entity": {
+      "party": {
+        "name": "",
+        "home_uri": "",
+        "logo_uri": "",
+        "registry_name": "",
+        "registered_entity_name": "",
+        "registered_entity_identifier": ""
+      }
+    },
+    "initial_client_status": ""
+  },
+  "response_types": [
+    "code id_token",
+    "code"
+  ],
+  "sso": {
+    "enabled": false
+  },
+  "metadata": {
+    "payload": null,
+    "schema": {}
+  },
+  "styling": {
+    "colors": {
+      "primary": "",
+      "background": "",
+      "header": ""
+    },
+    "font_url": "",
+    "logo_url": "",
+    "logo_size": ""
+  },
+  "clients": {},
+  "scopes_without_service": {},
+  "server_consent": {
+    "type": "oidc",
+    "oidc": {},
+    "custom": {
+      "server_consent_url": ""
+    },
+    "openbanking": {
+      "bank_url": ""
+    },
+    "client": null
+  },
+  "ciba_authentication_service": {
+    "type": "mock",
+    "external": {
+      "url": "",
+      "credentials": {
+        "username": "",
+        "password": "",
+        "api_key_name": "",
+        "api_key_value": "",
+        "api_key_in": ""
+      }
+    },
+    "client": null
+  },
+  "policies": {
+    "block_cdr_australia-demo-xhmyl60alp_api": {
+      "language": "cloudentity",
+      "type": "api",
+      "policy_name": "Block API",
+      "validators": [
+        {
+          "name": "false",
+          "conf": null,
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "block_cdr_australia-demo-xhmyl60alp_dcr": {
+      "language": "cloudentity",
+      "type": "dcr",
+      "policy_name": "Block DCR",
+      "validators": [
+        {
+          "name": "false",
+          "conf": null,
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "block_cdr_australia-demo-xhmyl60alp_developer": {
+      "language": "cloudentity",
+      "type": "developer",
+      "policy_name": "Block Developer",
+      "validators": [
+        {
+          "name": "false",
+          "conf": null,
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "block_cdr_australia-demo-xhmyl60alp_machine": {
+      "language": "cloudentity",
+      "type": "machine",
+      "policy_name": "Block Machine",
+      "validators": [
+        {
+          "name": "false",
+          "conf": null,
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "block_cdr_australia-demo-xhmyl60alp_user": {
+      "language": "cloudentity",
+      "type": "user",
+      "policy_name": "Block User",
+      "validators": [
+        {
+          "name": "false",
+          "conf": null,
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "mfa_cdr_australia-demo-xhmyl60alp_user": {
+      "language": "cloudentity",
+      "type": "user",
+      "policy_name": "MFA User",
+      "validators": [
+        {
+          "name": "authentication-factors",
+          "conf": {
+            "fields": [
+              {
+                "comparator": "contains",
+                "field": "login.verified_recovery_methods",
+                "value": [
+                  "mfa"
+                ]
+              }
+            ]
+          },
+          "recovery": [
+            {
+              "type": "mfa"
+            }
+          ]
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "nist-aal-1_cdr_australia-demo-xhmyl60alp_api": {
+      "language": "cloudentity",
+      "type": "api",
+      "policy_name": "NIST-AAL-1 API",
+      "validators": [
+        {
+          "name": "identity-context",
+          "conf": {
+            "fields": [
+              {
+                "comparator": "contains_all",
+                "field": "amr",
+                "value": [
+                  "pwd"
+                ]
+              }
+            ]
+          },
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "nist-aal-1_cdr_australia-demo-xhmyl60alp_user": {
+      "language": "cloudentity",
+      "type": "user",
+      "policy_name": "NIST-AAL-1 User",
+      "validators": [
+        {
+          "name": "identity-context",
+          "conf": {
+            "fields": [
+              {
+                "comparator": "contains_all",
+                "field": "amr",
+                "value": [
+                  "pwd"
+                ]
+              }
+            ]
+          },
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "nist-aal-2_cdr_australia-demo-xhmyl60alp_api": {
+      "language": "cloudentity",
+      "type": "api",
+      "policy_name": "NIST-AAL-2 API",
+      "validators": [
+        {
+          "name": "identity-context",
+          "conf": {
+            "fields": [
+              {
+                "comparator": "contains_all",
+                "field": "amr",
+                "value": [
+                  "mfa",
+                  "pwd"
+                ]
+              }
+            ]
+          },
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "nist-aal-2_cdr_australia-demo-xhmyl60alp_user": {
+      "language": "cloudentity",
+      "type": "user",
+      "policy_name": "NIST-AAL-2 User",
+      "validators": [
+        {
+          "name": "identity-context",
+          "conf": {
+            "fields": [
+              {
+                "comparator": "contains_all",
+                "field": "amr",
+                "value": [
+                  "mfa",
+                  "pwd"
+                ]
+              }
+            ]
+          },
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "nist-aal-3_cdr_australia-demo-xhmyl60alp_api": {
+      "language": "cloudentity",
+      "type": "api",
+      "policy_name": "NIST-AAL-3 API",
+      "validators": [
+        {
+          "name": "identity-context",
+          "conf": {
+            "fields": [
+              {
+                "comparator": "contains_all",
+                "field": "amr",
+                "value": [
+                  "mfa",
+                  "pwd"
+                ]
+              },
+              {
+                "comparator": "contains_any",
+                "field": "amr",
+                "value": [
+                  "face",
+                  "retina",
+                  "sc",
+                  "vbm"
+                ]
+              }
+            ]
+          },
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    },
+    "nist-aal-3_cdr_australia-demo-xhmyl60alp_user": {
+      "language": "cloudentity",
+      "type": "user",
+      "policy_name": "NIST-AAL-3 User",
+      "validators": [
+        {
+          "name": "identity-context",
+          "conf": {
+            "fields": [
+              {
+                "comparator": "contains_all",
+                "field": "amr",
+                "value": [
+                  "mfa",
+                  "pwd"
+                ]
+              },
+              {
+                "comparator": "contains_any",
+                "field": "amr",
+                "value": [
+                  "face",
+                  "retina",
+                  "sc",
+                  "vbm"
+                ]
+              }
+            ]
+          },
+          "recovery": null
+        }
+      ],
+      "cross_tenant_api_policy_bindings": {}
+    }
+  },
+  "policy_execution_points": null,
+  "services": {
+    "13318c99294d4c6a9ad07df2f0055c1b": {
+      "gateway_id": null,
+      "name": "test",
+      "custom_audience": "",
+      "type": "user",
+      "description": "test",
+      "system": false,
+      "with_specification": false,
+      "updated_at": "2023-06-27T11:32:46.319268Z",
+      "scopes": {},
+      "apis": {}
+    },
+    "cbc17141745b413facde58077e4849b2": {
+      "gateway_id": null,
+      "name": "test_service",
+      "custom_audience": "",
+      "type": "user",
+      "description": "test",
+      "system": false,
+      "with_specification": false,
+      "updated_at": "2023-07-05T11:44:38.881908Z",
+      "scopes": {},
+      "apis": {}
+    },
+    "cdr_australia-demo-xhmyl60alp-cdr-australia": {
+      "gateway_id": null,
+      "name": "CDR Australia",
+      "custom_audience": "",
+      "type": "openbanking",
+      "description": "",
+      "system": true,
+      "with_specification": false,
+      "updated_at": "2023-06-27T11:30:11.345585Z",
+      "scopes": {
+        "admin:metadata:update": {
+          "display_name": "Admin Metadata Update Data",
+          "description": "Allows permission to notify Data Holders of changes to Data Recipient metadata held by the CDR Register",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        },
+        "admin:metrics.basic:read": {
+          "display_name": "Basic Admin Metrics Data",
+          "description": "Allows access to basic metrics data",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        },
+        "bank:accounts.basic:read": {
+          "display_name": "Basic Bank Account Data",
+          "description": "Allows access to basic information of the customer's accounts",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "bank:accounts.detail:read": {
+          "display_name": "Detailed Bank Account Data",
+          "description": "Allows access to detailed information of the customer's accounts",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "bank:payees:read": {
+          "display_name": "Bank Payee Data",
+          "description": "Allows access to payee information stored by the customer",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "bank:regular_payments:read": {
+          "display_name": "Bank Regular Payments",
+          "description": "Allows access to regular payments",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "bank:transactions:read": {
+          "display_name": "Bank Transaction Data",
+          "description": "Allows access to transaction data for accounts",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "cdr-register:bank:read": {
+          "display_name": "Bank Data Holders List",
+          "description": "Allows access to Data Holder metadata held by the Register",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "cdr:registration": {
+          "display_name": "Register Client",
+          "description": "Allows Data Recipient to register or manage a software product client with a Data Holder",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "common:customer.basic:read": {
+          "display_name": "Basic Customer Data",
+          "description": "Allows access to personally identifiable information about the customer",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "common:customer.detail:read": {
+          "display_name": "Detailed Customer Data",
+          "description": "Allows access to more detailed information about the customer",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:accounts.basic:read": {
+          "display_name": "Basic Energy Account Data",
+          "description": "Allows access to basic information of the customer's energy accounts with retailers",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:accounts.concessions:read": {
+          "display_name": "Energy Concession & Hardship Data",
+          "description": "Allows access to the details of any concessions or hardship arrangement data for a customer's energy account",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:accounts.detail:read": {
+          "display_name": "Detailed Energy Account Data",
+          "description": "Allows access to detailed information of the customer's energy accounts with retailers",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:accounts.paymentschedule:read": {
+          "display_name": "Energy Regular Payments Data",
+          "description": "Allows access to payment schedules for energy accounts",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:billing:read": {
+          "display_name": "Energy Billing Data",
+          "description": "Allows access to the billing and invoice data for a customer's energy account",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:electricity.der:read": {
+          "display_name": "Distributed Energy Resource Data",
+          "description": "Allows access to data about distributed energy resources for service points",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:electricity.servicepoints.basic:read": {
+          "display_name": "Basic Service Point Data",
+          "description": "Allows access to basic standing data information of the customer's service points",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:electricity.servicepoints.detail:read": {
+          "display_name": "Detailed Service Point Data",
+          "description": "Allows access to detailed information of the customer's service point connection",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "energy:electricity.usage:read": {
+          "display_name": "Electricity Usage Data",
+          "description": "Allows access to electricity usage data for service points",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        },
+        "introspect_openbanking_tokens": {
+          "display_name": "Introspect consents",
+          "description": "Ability to introspect consents",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer"
+          }
+        }
+      },
+      "apis": {}
+    },
+    "cdr_australia-demo-xhmyl60alp-oauth2": {
+      "gateway_id": null,
+      "name": "OAuth2",
+      "custom_audience": "",
+      "type": "oauth2",
+      "description": "",
+      "system": true,
+      "with_specification": false,
+      "updated_at": "2023-06-27T11:30:11.345586Z",
+      "scopes": {
+        "dcr_manage": {
+          "display_name": "Manage Dynamically Registered Clients",
+          "description": "Allows to manage other dynamically registered clients",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr",
+            "scope_user_grant": "block_cdr_australia-demo-xhmyl60alp_user"
+          }
+        },
+        "dcr_register": {
+          "display_name": "Use Dynamic Client Registration",
+          "description": "Allows to register client using dynamic client registration endpoint when it's configured to require initial access token",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr",
+            "scope_user_grant": "block_cdr_australia-demo-xhmyl60alp_user"
+          }
+        },
+        "introspect_tokens": {
+          "display_name": "Introspect tokens",
+          "description": "Allows to introspect tokens",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        },
+        "list_clients_with_access": {
+          "display_name": "List clients with access",
+          "description": "Allows to list clients that user granted access",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        },
+        "revoke_client_access": {
+          "display_name": "Revoke client access",
+          "description": "Allows to revoke client access granted by user and remove all tokens",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        },
+        "revoke_tokens": {
+          "display_name": "Revoke tokens",
+          "description": "Allows to revoke tokens",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        }
+      },
+      "apis": {}
+    },
+    "cdr_australia-demo-xhmyl60alp-profile": {
+      "gateway_id": null,
+      "name": "Profile",
+      "custom_audience": "",
+      "type": "oidc",
+      "description": "",
+      "system": true,
+      "with_specification": false,
+      "updated_at": "2023-06-27T11:30:11.34559Z",
+      "scopes": {
+        "address": {
+          "display_name": "Address",
+          "description": "This scope value requests access to the address claim.",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": null
+        },
+        "email": {
+          "display_name": "Email",
+          "description": "This scope value requests access to the email and email_verified claims.",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": null
+        },
+        "offline_access": {
+          "display_name": "Offline access",
+          "description": "This scope value requests offline access using refresh token.",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": null
+        },
+        "openid": {
+          "display_name": "OpenID",
+          "description": "This scope value requests access to the sub claim which uniquely identifies the user.",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": null
+        },
+        "phone": {
+          "display_name": "Phone",
+          "description": "This scope value requests access to the phone_number and phone_number_verified claims.",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": null
+        },
+        "profile": {
+          "display_name": "Profile",
+          "description": "This scope value requests access to the end-user's default profile claims, which are: name, family_name, given_name, middle_name, nickname, preferred_username, profile, picture, website, gender, birthdate, zoneinfo, locale, and updated_at.",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": null
+        }
+      },
+      "apis": {}
+    },
+    "cdr_australia-demo-xhmyl60alp-transient-one-time-passwords": {
+      "gateway_id": null,
+      "name": "Transient One-Time Passwords",
+      "custom_audience": "",
+      "type": "system",
+      "description": "",
+      "system": true,
+      "with_specification": false,
+      "updated_at": "2023-06-27T11:30:11.345592Z",
+      "scopes": {
+        "transient_otp": {
+          "display_name": "Transient OTP",
+          "description": "Allows to send one-time passwords via email or SMS",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        }
+      },
+      "apis": {}
+    },
+    "cdr_australia-demo-xhmyl60alp-user-privacy-consent": {
+      "gateway_id": null,
+      "name": "User Privacy & Consent",
+      "custom_audience": "",
+      "type": "system",
+      "description": "",
+      "system": true,
+      "with_specification": false,
+      "updated_at": "2023-06-27T11:30:11.345593Z",
+      "scopes": {
+        "manage_consents": {
+          "display_name": "Manage consents",
+          "description": "Allows to grant and revoke user consents",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        },
+        "view_consents": {
+          "display_name": "View consents",
+          "description": "Allows to view user consents",
+          "metadata": null,
+          "transient": false,
+          "implicit": false,
+          "policy_execution_points": {
+            "scope_client_assignment": "block_cdr_australia-demo-xhmyl60alp_developer",
+            "scope_dynamic_client_registration": "block_cdr_australia-demo-xhmyl60alp_dcr"
+          }
+        }
+      },
+      "apis": {}
+    }
+  },
+  "idps": {},
+  "claims": {
+    "id_token": {
+      "address.country": {
+        "mapping": "address.country",
+        "source_type": "authnCtx",
+        "source_path": "address.country",
+        "scopes": [
+          "address"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "address.formatted": {
+        "mapping": "address.formatted",
+        "source_type": "authnCtx",
+        "source_path": "address.formatted",
+        "scopes": [
+          "address"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "address.locality": {
+        "mapping": "address.locality",
+        "source_type": "authnCtx",
+        "source_path": "address.locality",
+        "scopes": [
+          "address"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "address.postal_code": {
+        "mapping": "address.postal_code",
+        "source_type": "authnCtx",
+        "source_path": "address.postal_code",
+        "scopes": [
+          "address"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "address.region": {
+        "mapping": "address.region",
+        "source_type": "authnCtx",
+        "source_path": "address.region",
+        "scopes": [
+          "address"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "address.street_address": {
+        "mapping": "address.street_address",
+        "source_type": "authnCtx",
+        "source_path": "address.street_address",
+        "scopes": [
+          "address"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "birthdate": {
+        "mapping": "birthdate",
+        "source_type": "authnCtx",
+        "source_path": "birthdate",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "email": {
+        "mapping": "email",
+        "source_type": "authnCtx",
+        "source_path": "email",
+        "scopes": [
+          "email"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "email_verified": {
+        "mapping": "email_verified",
+        "source_type": "authnCtx",
+        "source_path": "email_verified",
+        "scopes": [
+          "email"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "family_name": {
+        "mapping": "family_name",
+        "source_type": "authnCtx",
+        "source_path": "family_name",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "gender": {
+        "mapping": "gender",
+        "source_type": "authnCtx",
+        "source_path": "gender",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "given_name": {
+        "mapping": "given_name",
+        "source_type": "authnCtx",
+        "source_path": "given_name",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "locale": {
+        "mapping": "locale",
+        "source_type": "authnCtx",
+        "source_path": "locale",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "middle_name": {
+        "mapping": "middle_name",
+        "source_type": "authnCtx",
+        "source_path": "middle_name",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "name": {
+        "mapping": "name",
+        "source_type": "authnCtx",
+        "source_path": "name",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "nickname": {
+        "mapping": "nickname",
+        "source_type": "authnCtx",
+        "source_path": "nickname",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "phone_number": {
+        "mapping": "phone_number",
+        "source_type": "authnCtx",
+        "source_path": "phone_number",
+        "scopes": [
+          "phone"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "phone_number_verified": {
+        "mapping": "phone_number_verified",
+        "source_type": "authnCtx",
+        "source_path": "phone_number_verified",
+        "scopes": [
+          "phone"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "picture": {
+        "mapping": "picture",
+        "source_type": "authnCtx",
+        "source_path": "picture",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "preferred_username": {
+        "mapping": "preferred_username",
+        "source_type": "authnCtx",
+        "source_path": "preferred_username",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "profile": {
+        "mapping": "profile",
+        "source_type": "authnCtx",
+        "source_path": "profile",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "updated_at": {
+        "mapping": "updated_at",
+        "source_type": "authnCtx",
+        "source_path": "updated_at",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "website": {
+        "mapping": "website",
+        "source_type": "authnCtx",
+        "source_path": "website",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      },
+      "zoneinfo": {
+        "mapping": "zoneinfo",
+        "source_type": "authnCtx",
+        "source_path": "zoneinfo",
+        "scopes": [
+          "profile"
+        ],
+        "opaque": false,
+        "saml_name": "",
+        "saml_name_format": ""
+      }
+    },
+    "saml_assertion": {
+      "commonName": {
+        "mapping": "preferred_username",
+        "source_type": "authnCtx",
+        "source_path": "preferred_username",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.3",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "countryName": {
+        "mapping": "address.country",
+        "source_type": "authnCtx",
+        "source_path": "address.country",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.6",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "eduPersonAffiliation": {
+        "mapping": "groups",
+        "source_type": "authnCtx",
+        "source_path": "groups",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:1.3.6.1.4.1.5923.1.1.1.1",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "givenName": {
+        "mapping": "given_name",
+        "source_type": "authnCtx",
+        "source_path": "given_name",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.42",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "localityName": {
+        "mapping": "address.locality",
+        "source_type": "authnCtx",
+        "source_path": "address.locality",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.7",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "mail": {
+        "mapping": "email",
+        "source_type": "authnCtx",
+        "source_path": "email",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:0.9.2342.19200300.100.1.3",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "name": {
+        "mapping": "name",
+        "source_type": "authnCtx",
+        "source_path": "name",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.41",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "postalCode": {
+        "mapping": "address.postal_code",
+        "source_type": "authnCtx",
+        "source_path": "address.postal_code",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.17",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "pseudonym": {
+        "mapping": "nickname",
+        "source_type": "authnCtx",
+        "source_path": "nickname",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.65",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "stateOrProvinceName": {
+        "mapping": "address.region",
+        "source_type": "authnCtx",
+        "source_path": "address.region",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.8",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "streetAddress": {
+        "mapping": "address.street_address",
+        "source_type": "authnCtx",
+        "source_path": "address.street_address",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.9",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "surname": {
+        "mapping": "family_name",
+        "source_type": "authnCtx",
+        "source_path": "family_name",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.4",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "telephoneNumber": {
+        "mapping": "phone_number",
+        "source_type": "authnCtx",
+        "source_path": "phone_number",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.20",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      },
+      "uid": {
+        "mapping": "sub",
+        "source_type": "authnCtx",
+        "source_path": "sub",
+        "scopes": [],
+        "opaque": false,
+        "saml_name": "urn:oid:2.5.4.45",
+        "saml_name_format": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+      }
+    }
+  },
+  "gateways": {},
+  "scripts": {},
+  "script_execution_points": {},
+  "servers_bindings": {},
+  "webhooks": {},
+  "custom_apps": {},
+  "theme_binding": null
+}

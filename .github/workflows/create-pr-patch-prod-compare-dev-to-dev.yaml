@@ -1,0 +1,58 @@
+name: create PR - patch prod compare dev to dev
+on:
+  workflow_dispatch:
+
+jobs:
+  update_repo:
+    name: create PR - patch prod compare dev to dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Set current date as env variable"
+        run: |
+          echo "patch_date=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+        id: current_date  
+
+      - name: checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: dev
+          fetch-depth: 0
+
+      - name: move config to tmp location
+        run: cp scenarios/patch-prod-compare-dev-to-dev/dev_config.json scenarios/patch-prod-compare-dev-to-dev/dev_config_tmp.json
+        shell: bash
+
+      - name: get new config
+        run: CID=${{ vars.CLOUDENTITY_PROD_MIGRATIONDEV_SYSTEM_CID }} CS=${{ secrets.CLOUDENTITY_PROD_MIGRATIONDEV_SYSTEM_CS }} URL=${{ vars.CLOUDENTITY_PROD_MIGRATIONDEV_URL }} TENANT=${{ vars.CLOUDENTITY_PROD_MIGRATIONDEV_TENANT }} WORKSPACE=${{ vars.CLOUDENTITY_PROD_MIGRATIONDEV_WORKSPACE }} ./scripts/get_config.sh scenarios/patch-prod-compare-dev-to-dev/dev_config.json
+        shell: bash
+
+      - name: create patch
+        run: go run cmd/create-patch/main.go scenarios/patch-prod-compare-dev-to-dev/dev_config_tmp.json scenarios/patch-prod-compare-dev-to-dev/dev_config.json | jq > scenarios/patch-prod-compare-dev-to-dev/patch.json
+
+      - name: replace 'dev' with 'prod'
+        run: sed -i 's/migrationdev/migrationprod/g' scenarios/patch-prod-compare-dev-to-dev/patch.json
+        shell: bash
+
+      - name: remove tmp config
+        run: rm scenarios/patch-prod-compare-dev-to-dev/dev_config_tmp.json
+        shell: bash
+
+      - name: commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Github automation
+          author_email: mail@example.com
+          message: 'Bump config'
+          add: 'scenarios/patch-prod-compare-dev-to-dev/dev_config.json scenarios/patch-prod-compare-dev-to-dev/patch.json'
+          new_branch: patch-prod-compare-dev-to-dev-${{ steps.current_date.outputs.patch_date }}
+
+      - name: create PR
+        uses: devops-infra/action-pull-request@v0.5.3
+        with:
+          source_branch: patch-prod-compare-dev-to-dev-${{ steps.current_date.outputs.patch_date }}
+          target_branch: dev
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          title: Patch prod compare dev to dev
+          body: "**Automated pull request**"
+          draft: false
+          allow_no_diff: false

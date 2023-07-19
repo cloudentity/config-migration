@@ -1,0 +1,16 @@
+{
+  "services": {
+    "cbc17141745b413facde58077e4849b2": {
+      "apis": {},
+      "custom_audience": "",
+      "description": "test",
+      "gateway_id": null,
+      "name": "test_service",
+      "scopes": {},
+      "system": false,
+      "type": "user",
+      "updated_at": "2023-07-05T11:44:38.881908Z",
+      "with_specification": false
+    }
+  }
+}
